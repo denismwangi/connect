@@ -1,0 +1,47 @@
+{% extends "layout.html"%}
+{%block body%}
+
+<div id="head" align = "center">
+    <a href="{{ url_for('main_page') }}"> Back Home</a>.
+    
+<h3>
+    {% for x in item%}
+
+    {{  x.title}}
+
+    <h2>
+        Link Owner
+    </h2> {{  x.owner }}
+        <br>
+        <br>
+
+        Link Class <br> {{ x.class }}
+        <br>
+        <br>
+        Main Link <br> {{  x.link }}
+        <br>
+        <br>
+        Description ::::> {{x.description}}
+
+
+    {%endfor%}
+    
+    {%for y in taged%}
+    <br>
+    <br>
+    {{y.owner}}
+    <br>
+    <br>
+    {{y.link}}
+    <br>
+    <br>
+    {{y.description}}
+        {%endfor%}
+
+</h3>
+
+</div>
+
+
+
+{%endblock%}

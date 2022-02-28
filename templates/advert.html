@@ -1,0 +1,63 @@
+{% extends "layout.html"%}
+
+{%block body%}
+
+<form method="POST" action="{{ url_for('advert') }}"  enctype="multipart/form-data" >
+    <br>
+<br>
+<input type = "file" name = "img" required onchange="loadFile(event)" placeholder = "Select Picture" aria-label="Select Picture">
+    <br>
+    <br>
+    <br>
+<input type="text" name = "title" required placeholder = "Product Name"  >
+<br>
+<br>
+<br>
+
+<textarea type="text" name="description" id="inbox" placeholder="Description" required="" rows=" 5" style="margin: 0px; width: 697px; height: 180px;"></textarea>
+<br>
+
+<br>
+<fieldset>
+    <legend>
+        Tags(Help Your Advert Reach Relevant People)
+    </legend>
+<input name="tag1" id="tag1" placeholder="First Tag" type="text">
+    <br>
+    <br>
+
+<input name="tag2" id="tag2" placeholder="Second Tag" type="text">
+    <br>
+    <br>
+<input name="tag3" id="tag3" placeholder="Third  Tag" type="text">
+    <br>
+    <br>
+
+
+</fieldset>
+<br>
+<br>
+<fieldset>
+    <legend>
+       
+            Please Select A Plan
+    </legend>
+    Ad For 24 hrs For 2$ <input required type="radio" name="plan" value="1">
+    <br>
+    <br> Ad For 72 hrs For 5$ <input required type="radio" name="plan" value="2">
+    <br>
+    <br> Ad For A week For 12$<input required type="radio" name="plan" value="3">
+    <br>
+    <br> 1 Month For Just 50$ (Plus VIP) <input required type="radio" name="plan" value="4">
+
+
+</fieldset>
+<br>
+<br>
+<button type="submit">Submit</button>
+<br>
+
+
+</form>
+
+{%endblock%}

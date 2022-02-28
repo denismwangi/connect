@@ -1,0 +1,45 @@
+{% extends "layout.html"%}
+
+{%block body%}
+
+<div align="center">
+    <h2>
+        My Profile
+
+    </h2>
+
+<div id = "prof"  align = "center">
+</div>
+</div>
+<div align = "left">
+<h2>
+    My Tags
+</h2>
+
+{%for x in tags%}
+<ul>
+    <li>
+    <form name="view" method="POST" action="{{ url_for('profile') }}">
+       <input type="hidden" name="the_tag" value="{{x}}">
+       <button type="submit"> View</button>
+
+       <button type="submit">   <a href="{{ url_for('post_on_tags') }}"> {{x}}</a> </button>
+    </form>
+</li>
+</ul>
+    {% endfor %}
+
+<h2>
+
+    People I Follow
+
+</h2>
+{%for y in favs%}
+
+        {{y}}  
+{% endfor %}
+</div>
+
+
+{{me}}
+{%endblock%}

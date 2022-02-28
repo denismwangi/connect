@@ -1,0 +1,35 @@
+{% extends "layout.html"%}
+
+{%block body%}
+
+<form method="POST" action="{{ url_for('register') }}" enctype="multipart/form-data" >
+
+{{ form.csrf_token }}
+
+
+    {{ form.email}}  {{form.email.label}}
+<br>
+<br>
+
+  {{ form.username}}  {{ form.username.label}}
+<br>
+<br>
+
+    {{ form.passc}}  {{form.passc.label}}
+<br>
+<br>
+
+ {{ form.passc2}}  {{ form.passc2.label}}
+<br>
+<br>
+
+<input type = "file" name = "img" required onchange="loadFile(event)">
+<br>
+<br>
+
+
+    <button type="submit" class="btn btn-primary btn-block">Register</button>
+</form>
+
+
+{%endblock%}

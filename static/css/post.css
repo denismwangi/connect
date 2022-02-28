@@ -1,0 +1,209 @@
+body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 50%;
+  border-radius: 13px
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+::selection {
+  color: #fff;
+  background: #1a81ff;
+}
+
+@media only screen and (min-width : 240px) {
+  
+  h1 {
+      font: 500 200%/100% Ubuntu;
+      margin: 0 0 30px 10px;
+  }
+  
+  label {
+    display: block;
+    margin: 0 0 10px 10px;
+  }
+  
+  #contact label {
+    width: 23%;
+    font-size: 150%;
+    text-align: left;
+  }
+  
+  #contact input[type=text],
+  #contact input[type=email],
+  #contact textarea {
+    width: 94.3%;
+    font-size: 100%;
+    margin-left: 10px;    
+  }
+  
+  #contact .button {
+    margin-left: 10px;
+    font-size: 130%;
+  }
+}
+
+
+@media only screen and (min-width : 480px) {
+  
+  h1 {
+      font: 500 160%/100% Ubuntu;
+      margin: 0 0 20px 10px;
+  }
+  
+  label,
+  input{display: inline-block}
+  
+  #contact label {
+    font-size: 100%;
+    width: 20%;
+    text-align: right;
+  }
+  
+  #contact label[for=message] {vertical-align: top}
+    
+  #contact input[type=text],
+  #contact input[type=email],
+  #contact textarea {     
+      width: 66.6667%;
+  }
+  
+  #contact .button {
+    margin-left: 24%;
+    font-size: 90%;
+  }
+
+.selc{
+   color: #666;    
+    box-sizing: border-box;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 5px 8px;
+    height: 40px;
+   width: 66.6667%;
+}
+.selc:focus{
+   outline: none;
+    box-shadow: inset 1px 2px 3px #CCC;
+
+}
+}
+
+
+.modal-container {
+    max-width: 600px;
+    margin: 3.33334% auto;
+}
+
+/* ======== Divider */
+.line {
+    clear: both;
+    padding: 15px 0;
+    border-top: 1px solid #EBEBEB;
+}
+
+/* ======== inputs */
+#contact input[type=text],
+#contact input[type=email],
+#contact textarea {
+    color: #666;    
+    box-sizing: border-box;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 5px 8px;
+}
+
+#contact input[type=text],
+#contact input[type=email]{
+  height: 40px
+}
+
+#contact textarea {
+    height: 200px;
+    min-height: 200px;
+    font-family: Ubuntu;
+    overflow: auto; /* Removing default Scrollbar from IE */
+}
+
+#contact input[type=text]:focus,
+#contact input[type=email]:focus,
+#contact textarea:focus {
+    outline: none;
+    box-shadow: inset 1px 2px 3px #CCC;
+}
+
+.selc{
+   color: #666;    
+    box-sizing: border-box;
+    border: 1px solid #CCC;
+    border-radius: 3px;
+    padding: 5px 8px;
+    height: 40px;
+    width:69%;
+}
+.selc:focus{
+   outline: none;
+    box-shadow: inset 1px 2px 3px #CCC;
+
+}
+/* Submit button */
+#contact .button {
+    padding: 10px 15px;
+    border: 1px solid #1A4F82;
+    border-radius: 3px;
+    color: #CFE6FC;
+    font-family: Ubuntu;
+    font-weight: 300;
+    background-color: #1A4F82;
+    background-image: linear-gradient(#215F9C, #1A4F82);
+    -o-background-image: linear-gradient(#215F9C, #1A4F82);
+    cursor: pointer;
+}
+
+#contact .button:hover {
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+    background-image: linear-gradient(#2B75BD, #1F5F9C);
+    -o-background-image: linear-gradient(#2B75BD, #1F5F9C);
+    color: #FFF;
+    box-shadow: 2px 2px 3px #999;
+}

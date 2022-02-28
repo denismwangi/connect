@@ -1,0 +1,21 @@
+{% extends "layout.html"%}
+
+{%block body%}
+
+            <form method=POST action="{{ url_for('new_pass') }}">
+                <h4>
+                   Please Enter A New And Strong Password Here
+                </h4>
+                <h3>Enter New Password</h3>
+
+                {{ form.csrf_token}}
+
+                {{ form.pass1 }} {{ form.pass1.label }}
+                <br><br>
+                
+                {{form.pass2 }}  {{ form.pass2.label}}
+
+                <input type="submit" value="Send" />
+            </form>
+
+     {%endblock%}

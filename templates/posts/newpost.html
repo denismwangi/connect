@@ -1,0 +1,88 @@
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-content">
+    <span class="close">&times;</span>
+
+
+
+
+    <div class="modal-container">
+		<h1> Create post</h1>
+		<form id="contact" method="post" action="{{ url_for('post') }}"  enctype="multipart/form-data">
+			<div class="line">
+						<label for="name">Choose Main Class: </label>
+						<select class="selc">
+{% for x in main_class %}
+
+<option>
+    {{ x }}
+</option>
+
+{%endfor%}
+
+</select>
+			
+{%if x == "Science And Technology"%}
+{% set sec = " tech"%}
+{%endif%}
+
+{% for y in sec %}
+<option>
+    {{ y }}
+</option>
+
+{%endfor%}
+				
+
+
+
+</div>
+
+				<div class="line">
+						<label for="name">Title: </label>
+						<input name="title" id="title" placeholder="Link Title" type="text">
+
+				</div>
+
+				<div class="line">
+						<label for="link">Main link: </label>
+						<input name="link" id="link" placeholder="You Main Link" type ="text">
+				</div>
+					<div class="line">
+						<label for="link">Main link: </label>
+						<input name="sec1" id="sec1" placeholder="Secondary links" type="text">
+				</div>
+				<div class="line">
+						<label for="link">Main link: </label>
+						<input name="sec2" id="sec2" placeholder="Secondary links" type="text">
+				</div>
+					<div class="line">
+						<label for="link">Picture: </label>
+						<input type = "file" name = "img" required onchange="loadFile(event)" placeholder = "Select Picture" aria-label="Select Picture">
+				</div>
+
+				<div class="line">
+						<label for="message">Message: </label>
+					
+						<textarea name="desc" id="message" rows="3" cols="10" placeholder="Link Description"></textarea>
+				</div>
+
+				<div class="line">
+						<label for="link">  Tags(Help Your Link Reach Relevant People)</label>
+					<input name="tag2" id="tag2" placeholder="Second Tag" type="text">
+				</div>
+				<div class="line">
+						<label for="link">Tag 2: </label>
+						<input name="tag1" id="tag1" placeholder="First Tag" type="text">
+				</div>
+
+				<div class="line">
+
+						<input type="submit" name="submit" value="Post" class="btn btn-primary">
+				</div>
+
+		</form>
+</div>
+  </div>
+</div>

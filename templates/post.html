@@ -1,0 +1,89 @@
+{% extends "layout.html"%}
+
+{%block body%}
+
+<div name="fullform" align ="center">
+<form method="POST" action="{{ url_for('post') }}"  enctype="multipart/form-data" >
+    <br>
+    <br>
+Choose Main Class
+<br>
+<select>
+{% for x in main_class %}
+
+<option>
+    {{ x }}
+</option>
+
+{%endfor%}
+
+</select>
+
+{%if x == "Science And Technology"%}
+{% set sec = " tech"%}
+{%endif%}
+
+{% for y in sec %}
+
+<option>
+    {{ y }}
+</option>
+
+{%endfor%}
+<br>
+<br>
+
+<br>
+
+<input type = "file" name = "img" required onchange="loadFile(event)" placeholder = "Select Picture" aria-label="Select Picture">
+<br>
+<br>
+
+<input name="title" id="title" placeholder="Link Title" type="text">
+    <br>
+    <br>
+
+<input name="link" id="link" placeholder="You Main Link" type ="url">
+    <br>
+    <br>
+
+<input name="desc" id="desc" placeholder="Link Description" type="text">
+    <br>
+    <br>
+
+
+        <fieldset>
+            <legend>
+                Secondary Links
+            </legend>
+<input name="sec1" id="sec1" placeholder="Secondary links" type="url">
+    <br>
+    <br>
+
+<input name="sec2" id="sec2" placeholder="Secondary links" type="url">
+    <br>
+    <br>
+        </fieldset>
+        <br>
+        <br>
+        <fieldset>
+            <legend>
+                Tags(Help Your Link Reach Relevant People)
+            </legend>
+<input name="tag1" id="tag1" placeholder="First Tag" type="text">
+            <br>
+            <br>
+
+<input name="tag2" id="tag2" placeholder="Second Tag" type="text">
+            <br>
+            <br>
+
+        </fieldset>
+        <br><br>
+
+<button type="submit">POST</button>
+          <br>
+          <br>
+</form>
+</div>
+{%endblock%}

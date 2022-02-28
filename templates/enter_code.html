@@ -1,0 +1,30 @@
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Forgot Password</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+    <div class="box">
+        <div class="innerbox">
+            <form method=POST action="{{ url_for('enter_code') }}">
+                <h4>
+                Please Enter Code Sent Via Email To Reset Password
+                </h4>
+                <h3>Enter Code Here</h3>
+                <br>
+                {% for message in get_flashed_messages() %}
+                {{  message }}
+                {% endfor %}
+                <br>
+
+                <input required type="text" name="code" placeholder="Verification Code" />
+                <input type="submit" value="Send" />
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

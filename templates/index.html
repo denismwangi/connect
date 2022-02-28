@@ -1,0 +1,44 @@
+{% extends "layout.html"%}
+
+{%block body%}
+
+Log in Here
+
+<form method="POST" action=  "/">
+
+        {{ form.csrf_token }}
+
+
+        {{ form.email}} {{form.email.label}}
+
+<br>
+<br>
+
+        {{form.passc}} {{form.passc.label}}
+
+        
+        <br>
+        <br>
+
+
+        <button type="submit" class="btn btn-primary btn-block">Log In</button>
+    
+</form>
+<br>
+
+
+
+<div>
+
+        
+        <a    href="{{ url_for('register') }}"><button>Sign Up </button> </a>  
+ <br>
+ <br>
+        Forgot Password?
+        
+        <br>
+        <br>
+        <a    href="{{ url_for('reset_pass') }}"><button>Request New Password </button> </a>
+    </div>
+
+{%endblock%}
