@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect</title>
+  <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+
+<body>
+
+<form method="POST" action="{{ url_for('enter_code') }}"  style="margin-top: 150px;">
+
+        {{ form.csrf_token }}
+ <h4>Connect</h4>
+  <h3>Enter Code Here</h3>
+                <br>
+                {% for message in get_flashed_messages() %}
+                {{  message }}
+                {% endfor %}
+                <br>
+  <div>
+      <input type="text"  name="code" placeholder="Verification Code"/>
+  </div>
+  
+  
+  <input type="submit" value="Send"/>
+</form>

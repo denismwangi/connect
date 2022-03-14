@@ -1,0 +1,79 @@
+{% include 'includes/topbar.html' %}
+{% include 'includes/sidenav.html' %}
+
+
+<div class="middle">
+
+
+    
+		<h1> Create Advert</h1>
+		<form id="contact" method="POST" action="{{ url_for('advert') }}"  enctype="multipart/form-data" style="margin-left: 70px;" >
+		
+
+				<div class="line">
+						
+						<input name="title" id="title" placeholder="Product Name" type="text">
+
+				</div>
+				<div class="line">
+						
+					
+						<textarea name="description" id="message" rows="1" cols="5" placeholder="Product Description"></textarea>
+				</div>
+
+
+				
+					<div class="line">
+						
+						<input type = "file" name = "img" required onchange="loadFile(event)" placeholder = "Select Picture" aria-label="Select Picture">
+				</div>
+
+				
+				<div class="line">
+						
+					<input name="tag2" id="tag2" placeholder="Second Tag" type="text">
+				</div>
+				<div class="line">
+						
+						<input name="tag1" id="tag1" placeholder="First Tag" type="text">
+				</div>
+					<div class="line">
+					
+						<input name="tag3" id="tag3" placeholder="Third  Tag" type="text">
+				</div>
+				<div class="line">
+						
+						 Ad For 24 hrs For 2$ <input required type="radio" name="plan" value="1">
+    <br>
+    <br> Ad For 72 hrs For 5$ <input required type="radio" name="plan" value="2">
+    <br>
+    <br> Ad For A week For 12$<input required type="radio" name="plan" value="3">
+    <br>
+    <br> 1 Month For Just 50$ (Plus VIP) <input required type="radio" name="plan" value="4">
+						</div>
+				
+
+
+				<div class="line">
+
+						<input type="submit" name="submit" value="Create" class="btn btn-primary">
+				</div>
+
+		</form>
+
+ 
+</div>
+
+{% include 'includes/rightbar.html' %}
+
+</div>
+<style>
+
+</style>
+
+<script>
+
+</script>
+
+      
+        {% include 'includes/footer.html' %}

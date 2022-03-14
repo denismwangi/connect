@@ -1,0 +1,13 @@
+#Auth
+  -login
+  -register
+  -profile
+  -new_pass
+  -enter_code
+  -reset_pass
+#main_page
+   -create_post
+   -post_on_tags
+   -view_link
+   -advert
+   -choose_tags

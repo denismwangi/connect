@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect</title>
+  <link rel="stylesheet" href="/static/css/auth.css">
+</head>
+
+<body>
+
+<form method="POST" action="{{ url_for('register') }}" enctype="multipart/form-data" style=" margin-top: 100px;">
+
+{{ form.csrf_token }}
+ <h4>Connect</h4>
+  <div>
+      <input type="text" name="email" placeholder="Email"/>
+  </div>
+   <div>
+      <input type="text" name="username" placeholder="Username"/>
+  </div>
+   
+  <div>
+    <input type="password" name="passc"  placeholder="Password"/>
+  </div>
+  <div>
+    <input type="password" name="passc2" placeholder="Confirm Password"/>
+  </div>
+  <div>
+    <input type="file" name="image"/>
+  </div>
+  <div class="remember-me">
+    <input type="checkbox" id="remember-me" /><label for="remember-me">Remember me</label>
+    &#8226;
+    <a href="/reset_pass/">Forgot password</a>
+  </div>
+  <input type="submit" value="Register"/>
+  <a href="/login/">Already have an account? Login</a>
+</form>

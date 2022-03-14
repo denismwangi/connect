@@ -10,6 +10,7 @@
     <div class="box">
         <div class="innerbox" align = "center">
             <form method=POST action="{{ url_for('reset_pass') }}">
+                {{ form.csrf_token }}
                 <h4>
                     You are trying to reset Your Account Password
                 </h4>

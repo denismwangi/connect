@@ -165,7 +165,7 @@ def home():
                             return redirect(url_for('choose_tags'))
                         else:    
                             return redirect(url_for('main_page'))   
-    return render_template("index.html" , form = form)
+    return render_template("main/middle.html" , form = form)
 
 
 def reset_session_required(f):
@@ -200,7 +200,7 @@ def  reset_pass():
             
         else:
             return redirect(url_for('register'))
-    return render_template('reset_pass.html')
+    return render_template('auth/reset_pass.html',  form = form)
 
 @application.route('/enter_code/' , methods = ['POST','GET'])
 @csrf.exempt
@@ -223,7 +223,7 @@ def enter_code(email = "jacksonmuta123@gmail.com"):
         else:
             return redirect(url_for('register'))
         
-    return render_template('enter_code.html')
+    return render_template('auth/enter_code.html',form=form)
 
 class New_pass(Base_form):
       
@@ -298,7 +298,7 @@ def login():
                             return redirect(url_for('choose_tags'))
                         else:    
                             return redirect(url_for('main_page'))
-    return render_template('login.html' , form = form)
+    return render_template('auth/login.html' , form = form)
 
 
 class Base_form(FlaskForm):
@@ -359,7 +359,7 @@ def register():
                             "profile" : uploa , "favs" : favs , "tags" : tags })
             if users.find_one({"email":email}):
                 return redirect(url_for('home'))
-    return render_template('register.html',form = form)
+    return render_template('auth/register.html',form = form)
 
 @application.route('/main_page/' , methods = ['POST','GET'])
 @csrf.exempt
@@ -425,7 +425,7 @@ def main_page():
             
               
             
-    return render_template('middle.html' , arr = render_array , email = user_email)
+    return render_template('main/middle.html' , arr = render_array , email = user_email)
 
 @application.route('/profile/' , methods = ['POST','GET'])  
 @csrf.exempt
@@ -493,6 +493,7 @@ def view_link():
     return render_template('view_link.html' , taged = render_arr ,  item = post_in , link = link)
 
 @application.route('/advert/' , methods = ['POST','GET'])
+@csrf.exempt
 def advert():
     advert_db = mongo.db.adverts 
     if request.method == "POST":
@@ -525,7 +526,7 @@ def advert():
         advert_db.insert_one({"title" : title , "desc" : description , "ad_pic" : uploa , 
                              "plan" : the_plain })        
     
-    return render_template('advert.html')
+    return render_template('ads/advert.html')
 @application.route('/mpesa/' , methods = ['POST','GET'])
 def mpesa():
     
@@ -786,7 +787,7 @@ def choose_tags():
         user_db.find_one_and_update({"email" : user_email} ,{ '$set' :  {"tags": em_tags}} )
       
       
-    return render_template('choose_tags.html' , mail = user_email , mains = main_class,
+    return render_template('main/choose_tags.html' , mail = user_email , mains = main_class,
                            tech =  tech , ent = enta, mains2 = [tech,enta,sports,buss_invest,rel_life_style,agric_green , health_nutr_agric,mortage_property],
                            
                            

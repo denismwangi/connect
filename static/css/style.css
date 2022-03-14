@@ -72,7 +72,7 @@ img {
 }
 
 .btn-primary {
-  background: var(--color-primary);
+  background: #1DA1F2;
   color: white;
 }
 
@@ -205,7 +205,7 @@ main .container .left .profile {
 
 .left .sidebar .active i,
 .left .sidebar .active h3 {
-  color: var(--color-primary);
+  color: #1DA1F2;
 }
 
 .left .sidebar .active::before {
@@ -214,7 +214,7 @@ main .container .left .profile {
   width: 0.5rem;
   height: 100%;
   position: absolute;
-  background: var(--color-primary);
+  background: #1DA1F2;
 }
 
 .left .sidebar .menu-item:first-child.active {
@@ -243,7 +243,7 @@ main .container .left .profile {
   background: var(--color-white);
   border-radius: var(--card-border-radius);
   padding: var(--card-padding);
-  box-shadow: 0 0 2rem hsl(var(--color-primary), 75%, 60% 25%);
+  box-shadow: #1DA1F2;
   z-index: 8;
   display: none;
 }
@@ -330,7 +330,7 @@ main .container .left .profile {
   width: 2rem;
   height: 2rem;
   align-self: start;
-  border: 3px solid var(--color-primary);
+  border: 3px solid #1DA1F2;
 }
 
 /* ============= CREATE POST ============= */
@@ -461,7 +461,7 @@ main .container .right {
 }
 
 .right .messages .message-request {
-  color: var(--color-primary);
+  color: #1DA1F2;
 }
 
 .right .messages .message {
@@ -585,7 +585,7 @@ main .container .right {
 }
 
 .customize-themes .choose-size span.active {
-  background: var(--color-primary);
+  background: #1DA1F2;
 }
 
 /* ================= FONT SIZE ================= */
@@ -653,7 +653,7 @@ main .container .right {
 }
 
 .customize-themes .choose-bg > div.active {
-  border: 2px solid var(--color-primary);
+  border: 2px solid #1DA1F2;
 }
 
 .customize-themes .choose-bg .bg-1 {
