@@ -56,7 +56,17 @@ img {
   display: block;
   width: 100%;
 }
-
+.btn-open-m{
+ display: inline-block;
+  padding: var(--btn-padding);
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 0.9rem;
+   background: #1DA1F2;
+  color: white;
+}
 .btn {
   display: inline-block;
   padding: var(--btn-padding);
@@ -74,6 +84,7 @@ img {
 .btn-primary {
   background: #1DA1F2;
   color: white;
+
 }
 
 .text-bold {

@@ -5,6 +5,10 @@
 <div align="center">
     <h2>
         My Profile
+     
+<img src = "{{prof}}">
+
+
 
     </h2>
 
@@ -21,6 +25,7 @@
     <li>
     <form name="view" method="POST" action="{{ url_for('profile') }}">
        <input type="hidden" name="the_tag" value="{{x}}">
+       
        <button type="submit"> View</button>
 
        <button type="submit">   <a href="{{ url_for('post_on_tags') }}"> {{x}}</a> </button>

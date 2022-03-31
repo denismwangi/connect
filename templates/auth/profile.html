@@ -1,0 +1,260 @@
+{% include 'includes/topbar.html' %}
+<div class="profile-p">
+  
+  <div class="profile-banner-p">
+    
+  </div>
+  <div class="profile-picture-p">
+  
+    <a href="" class="add-frnd-p">Add Friend <span class="entypo-user-add"></span></a>
+    <a href="" class="follow-p">Follow <span class="entypo-plus"></span></a>
+    
+    <a href=""><img src="https://i.pravatar.cc/300?img=7"></a>
+    <span>{{me}}</span>
+    <br>
+    <small>(Jack Daniel)</small>
+    <br>
+    
+  </div>
+  
+  <div class="profile-content-p">
+  
+    <div class="content-left-p">
+    
+      <ul>
+        
+        <li><span class="entypo-users"></span>5.5K Followers</li>
+         <li><span class="entypo-users"></span>5.5K Following</li>
+        <li><a><span class="entypo-compass"></span> USA, California</a></li>
+        <li><a><span class="entypo-graduation-cap "></span> California College of the Arts </a></li>
+        <li><a><span class="entypo-suitcase"></span> Graphic Designer at Wicrosoft</a></li>
+        <li><a><span class="entypo-lock-open"></span> Public</a></li>
+
+      </ul>
+            <ul>
+            	<h4>Tags</h4>
+        {%for x in tags%}
+        <li>
+     
+       
+      
+
+       <button type="submit" class="md-chip md-chip-clickable"> <a href="{{ url_for('post_on_tags') }}" style="font-size: 13px; color: black;"> {{x}}</a> </button>
+     </li>
+    </form>
+        
+         
+       {% endfor %}
+
+
+      </ul>
+      
+    </div>
+    
+    <div class="content-middle-p">
+    
+      <div class="content-md-left-p">
+        
+        <img src="https://i.pravatar.cc/300?img=7">
+        
+      </div>
+      
+      <div class="content-md-middle-p">
+        
+        <div class="post-title-name-p">
+          <a href="">Daniel Jack</a><br>
+        </div>
+        
+        <div class="post-title-time-p">
+          <a href="">Saturday 13:52</a>
+        </div>
+        
+         <div class="post-desc-p">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum molestie eleifend orci non varius. Integer et mauris quis neque blandit sagittis.
+           <br>
+           <a href=""><img src="https://picsum.photos/seed/picsum/300/320"></a>
+           
+        </div>
+        
+        <div class="post-info-p">
+        
+          <ul>
+          
+            <li><a href="" class="like"><span class="entypo-thumbs-up"></span> Like</a></li>
+            <li><a href="" class="comment"><span class="entypo-comment"></span> Comment</a></li>
+            <li><a href="" class="share"><span class="entypo-share"></span> Share</a></li>
+            
+          </ul>
+            
+        </div>
+      
+      </div>
+      
+    </div>
+    
+    <div class="content-right-p">
+      
+      <ul>
+        
+        <li><a href=""><span class="entypo-chat"></span></a></li>
+        <li><a href=""><span class="entypo-camera"></span></a></li>
+        <li><a href=""><span class="entypo-export"></span></a></li>
+
+        
+      </ul>
+      
+      
+    </div>
+    
+    
+  </div>
+  
+    
+</div>
+
+<!-- post  template-->
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+   <div class="wrapper">
+
+<!-- Header -->
+  
+  <div class="header" tabindex="1">
+   
+    <h1 class="title" tabindex="0">New Post</h1>
+   
+  </div>
+  
+<!--  Main form  -->
+  
+  <form  method="post" action="{{ url_for('post') }}"  enctype="multipart/form-data">
+    <label for="email">Choose Class</label>
+
+    <select class="post-input">
+{% for x in main_class %}
+
+<option>
+    {{ x }}
+</option>
+
+{%endfor%}
+
+</select>
+            
+{%if x == "Science And Technology"%}
+{% set sec = " tech"%}
+{%endif%}
+
+{% for y in sec %}
+<option>
+    {{ y }}
+</option>
+
+{%endfor%}
+                
+
+
+    
+    <label for="title">Title</label>
+  <input name="title" class="post-input" id="title" placeholder="Link Title" type="text">
+  <label for="title">Main Link</label>
+    <input name="link" class="post-input" id="link" placeholder="You Main Link" type ="text">
+    <label for="title">Secondary Link</label>
+    <input name="sec1" class="post-input" id="sec1" placeholder="Secondary links" type="text">
+    <label for="title">Secondary Link</label>
+    <input name="sec2" class="post-input" id="sec2" placeholder="Secondary links" type="text">
+    <label for="title">Description</label>
+    <textarea name="desc"  class="post-input" id="message" rows="3" cols="10" placeholder="Link Description"></textarea>
+    <label for="link">Picture: </label>
+    <input type = "file" class="post-input" name = "img" required onchange="loadFile(event)" placeholder = "Select Picture" aria-label="Select Picture">
+    <label for="link">Tag 1: </label>
+    <input name="tag1" class="post-input" id="tag1" placeholder="First Tag" type="text">
+        <label for="link">Tag 2: </label>
+    <input name="tag2" class="post-input" id="tag2" placeholder="Second Tag" type="text">
+    
+   
+    
+    <input class="post-sub" type="submit" value="Post">
+   </form> 
+    
+<!--  Footer  -->
+  
+    
+  
+</div>
+    </div>
+</div>
+      <style type="text/css">
+          .wrapper {
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  padding: 1em 2em;
+  background-color: white;
+  border-radius: 0.4em;
+ /* box-shadow: 0px 5px 10px rgba(0,0,0,0.15);*/
+  /*width: 500px;*/
+  width: 100%;
+  
+}
+
+/* Header Styling */
+
+.header {
+  text-align: center;
+  margin-bottom: 2.5em;
+} 
+label {
+  display: block;
+  width: 100%;
+  font-size: .8725rem;
+  color: black;
+  margin-bottom: 0.3em;
+}
+
+.post-input{
+   display: block;
+  width: 100%;
+  margin-bottom: 1.5em;
+  padding: .75em;
+  border-radius: .3em;
+  border: 1px solid #E2E2E2; 
+}
+input {
+  
+}
+.post-check{
+    margin-right: 0.5em; 
+  margin-bottom: 0px;
+  width: 14px;  
+}
+input[type='checkbox'] {
+  
+}
+
+.post-sub{
+    
+  background: #1DA1F2;
+  color: white;
+  display: inline-block;
+  padding: var(--btn-padding);
+  font-weight: 500;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: all 300ms ease;
+  font-size: 0.9rem;
+  cursor: pointer;
+   
+}
+
+input[type='submit'] {
+ 
+}
+
+/*input[type='submit']:hover {
+  opacity: 1;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}*/
+      </style>
+  {% include 'includes/footer.html' %}
